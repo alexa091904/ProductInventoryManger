@@ -556,3 +556,46 @@ button {
 .flex-col {
     flex-direction: column;
 }
+
+/* Dark mode overrides (enable by adding the `dark` class on a parent) */
+.dark {
+    color-scheme: dark;
+}
+
+/* Backgrounds */
+.dark .bg-gray-50 { background-color: #0f1724; }
+.dark .bg-white { background-color: #0b1220; }
+.dark .bg-gray-100 { background-color: #0b1220; }
+.dark .bg-gray-200 { background-color: #0b1220; }
+
+/* Text colors */
+.dark .text-gray-900 { color: #e6eef8; }
+.dark .text-gray-600 { color: #9ca3af; }
+.dark .text-gray-500 { color: #94a3b8; }
+.dark .text-gray-400 { color: #7b8794; }
+.dark .text-white { color: #ffffff; }
+
+/* Borders */
+.dark .border-gray-100 { border-color: #1f2937; }
+.dark .border-gray-200 { border-color: #263244; }
+.dark .border-gray-300 { border-color: #334155; }
+
+/* Hover states */
+.dark .hover\:bg-gray-50:hover { background-color: rgba(255,255,255,0.02); }
+.dark .hover\:bg-blue-700:hover { filter: brightness(1.2); }
+.dark .hover\:bg-blue-50:hover { background-color: rgba(255,255,255,0.02); }
+.dark .hover\:bg-red-50:hover { background-color: rgba(255,0,0,0.02); }
+
+/* Cards and shadows adjustments */
+.dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.6); }
+.dark .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(2,6,23,0.7); }
+
+/* Inputs */
+.dark input, .dark textarea, .dark select {
+    background-color: #071024;
+    color: #e6eef8;
+    border-color: #1f2937;
+}
+
+/* Table row hover */
+.dark tr.hover\:bg-gray-50\/50:hover { background-color: rgba(255,255,255,0.02); }

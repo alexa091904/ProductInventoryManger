@@ -5,17 +5,19 @@ import { FiBox } from 'react-icons/fi';
 
 function App() {
     return (
-        <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
+        // Add `dark` class here to enable dark mode styles
+        <div className="dark min-h-screen bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100">
             {/* Header */}
-            <header className="bg-white shadow-sm sticky top-0 z-10">
+            <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                        <div className="bg-blue-600 w-10 h-10 rounded-lg flex items-center justify-center shadow-md shadow-blue-200">
-                            <span className="text-white font-bold text-lg">PM</span>
-                        </div>
                         <div>
-                            <h1 className="text-xl font-bold text-gray-900 leading-none">Product Inventory Manager</h1>
-                            <p className="text-xs text-gray-500 mt-1">Complete inventory management</p>
+                            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 leading-none">
+                                Product Inventory Manager
+                            </h1>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                Complete inventory management
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +29,7 @@ function App() {
             </main>
 
             <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-                <p className="text-sm text-gray-400 flex justify-end items-center gap-2">
+                <p className="text-sm text-gray-400 dark:text-gray-500 flex justify-end items-center gap-2">
                 </p>
             </footer>
         </div>

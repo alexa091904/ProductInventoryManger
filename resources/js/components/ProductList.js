@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from './ProductForm';
-import { FiSearch, FiPlus, FiDownload, FiFilter, FiEdit2, FiTrash2, FiBox } from 'react-icons/fi';
+import { FiSearch, FiPlus, FiFilter, FiEdit2, FiTrash2, FiBox } from 'react-icons/fi';
 import api from '../api';
 
 const ProductList = () => {
@@ -76,20 +76,7 @@ const ProductList = () => {
     const lowStockCount = products.filter(p => p.quantity < 10).length;
     const totalCategories = categories.length;
 
-    const exportCSV = () => {
-        const headers = ['Name', 'Category', 'Price', 'Quantity', 'Description'];
-        const csvContent = [
-            headers.join(','),
-            ...products.map(p => [p.name, p.category, p.price, p.quantity, `"${p.description}"`].join(','))
-        ].join('\n');
-
-        const blob = new Blob([csvContent], { type: 'text/csv' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'inventory.csv';
-        a.click();
-    };
+    // CSV export removed
 
     return (
         <div className="space-y-8">
@@ -101,7 +88,7 @@ const ProductList = () => {
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p className="text-sm font-medium text-gray-500 mb-1">Total Value</p>
-                    <h3 className="text-3xl font-bold text-gray-900">${totalValue.toFixed(2)}</h3>
+                    <h3 className="text-3xl font-bold text-gray-900">₱{totalValue.toFixed(2)}</h3>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <p className="text-sm font-medium text-gray-500 mb-1">Low Stock</p>
@@ -134,20 +121,18 @@ const ProductList = () => {
                         ))}
                     </select>
 
-                    <button
-                        onClick={exportCSV}
-                        className="px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 flex items-center gap-2 text-sm font-medium transition-colors"
-                    >
-                        <FiDownload /> CSV
-                    </button>
-
-                    <button
-                        onClick={handleAdd}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 text-sm font-medium transition-colors shadow-sm whitespace-nowrap"
-                    >
-                        <FiPlus /> Add Product
-                    </button>
+                    {/* CSV export button removed */}
                 </div>
+            </div>
+
+            {/* Add Product Button */}
+            <div className="flex justify-end">
+                <button
+                    onClick={handleAdd}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 text-sm font-medium transition-colors shadow-sm whitespace-nowrap"
+                >
+                    <FiPlus /> Add Product
+                </button>
             </div>
 
             {/* Content */}
@@ -209,7 +194,7 @@ const ProductList = () => {
                                         {product.quantity}
                                     </td>
                                     <td className="px-6 py-4 font-bold text-gray-900">
-                                        ${Number(product.price).toFixed(2)}
+                                        ₱{Number(product.price).toFixed(2)}
                                     </td>
                                     <td className="px-6 py-4">
                                         <p className="text-sm text-gray-500 truncate max-w-xs">{product.description}</p>
