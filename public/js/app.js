@@ -51743,7 +51743,7 @@ var ProductForm = function ProductForm(_ref) {
               type: "text",
               name: "name",
               placeholder: "Enter product name",
-              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow",
+              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow text-black placeholder-gray-700",
               value: formData.name,
               onChange: handleChange,
               required: true
@@ -51759,7 +51759,7 @@ var ProductForm = function ProductForm(_ref) {
                 name: "price",
                 step: "0.01",
                 placeholder: "0.00",
-                className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow",
+                className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow text-black placeholder-gray-700",
                 value: formData.price,
                 onChange: handleChange,
                 required: true
@@ -51772,7 +51772,7 @@ var ProductForm = function ProductForm(_ref) {
                 type: "number",
                 name: "quantity",
                 placeholder: "0",
-                className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow",
+                className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow text-black placeholder-gray-700",
                 value: formData.quantity,
                 onChange: handleChange,
                 required: true
@@ -51787,7 +51787,7 @@ var ProductForm = function ProductForm(_ref) {
               name: "category",
               list: "categories",
               placeholder: "Select or type a category",
-              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow",
+              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow text-black placeholder-gray-700",
               value: formData.category,
               onChange: handleChange
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("datalist", {
@@ -51806,7 +51806,7 @@ var ProductForm = function ProductForm(_ref) {
               name: "description",
               rows: "3",
               placeholder: "Enter product description",
-              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow resize-none",
+              className: "w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow resize-none text-black placeholder-gray-700",
               value: formData.description,
               onChange: handleChange
             })]

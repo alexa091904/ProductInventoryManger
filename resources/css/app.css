@@ -19,11 +19,11 @@ body {
 }
 
 .bg-gray-50 {
-    background-color: #f9fafb;
+    background-color: #000000;
 }
 
 .bg-white {
-    background-color: #ffffff;
+    background-color: #050505;
 }
 
 .bg-gray-100 {
@@ -39,19 +39,19 @@ body {
 }
 
 .bg-red-100 {
-    background-color: #fee2e2;
+    background-color: #000000;
 }
 
 .bg-red-50 {
-    background-color: #fef2f2;
+    background-color: #000000;
 }
 
 .bg-blue-50 {
-    background-color: #eff6ff;
+    background-color: #000000;
 }
 
 .bg-gray-200 {
-    background-color: #e5e7eb;
+    background-color: #030303;
 }
 
 .bg-black {
@@ -63,19 +63,19 @@ body {
 }
 
 .text-gray-600 {
-    color: #4b5563;
+    color: #000000;
 }
 
 .text-gray-500 {
-    color: #6b7280;
+    color: #121212;
 }
 
 .text-gray-400 {
-    color: #9ca3af;
+    color: #080808;
 }
 
 .text-white {
-    color: #ffffff;
+    color: #101010;
 }
 
 .text-blue-600 {
@@ -569,11 +569,11 @@ button {
 .dark .bg-gray-200 { background-color: #0b1220; }
 
 /* Text colors */
-.dark .text-gray-900 { color: #e6eef8; }
-.dark .text-gray-600 { color: #9ca3af; }
-.dark .text-gray-500 { color: #94a3b8; }
-.dark .text-gray-400 { color: #7b8794; }
-.dark .text-white { color: #ffffff; }
+.dark .text-gray-900 { color: #000000; }
+.dark .text-gray-600 { color: #000000; }
+.dark .text-gray-500 { color: #000000; }
+.dark .text-gray-400 { color: #000000; }
+.dark .text-white { color: #000000; }
 
 /* Borders */
 .dark .border-gray-100 { border-color: #1f2937; }
@@ -593,9 +593,35 @@ button {
 /* Inputs */
 .dark input, .dark textarea, .dark select {
     background-color: #071024;
-    color: #e6eef8;
+    color: #000000;
     border-color: #1f2937;
 }
 
 /* Table row hover */
 .dark tr.hover\:bg-gray-50\/50:hover { background-color: rgba(255,255,255,0.02); }
+
+/* --------- FORCE ALL TEXT BLACK ---------
+   This rule forces all rendered text (including form controls
+   and placeholders) to black. It uses !important to override
+   existing color declarations. If you later want to limit this
+   to only certain components (e.g. light-mode only), remove
+   the global selectors and use a more specific scope.
+----------------------------------------- */
+
+html, body, :root, * , *::before, *::after {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+/* Ensure form controls show black text */
+input, textarea, select, button {
+    color: #000 !important;
+}
+
+/* Placeholders */
+::placeholder { color: #000 !important; opacity: 1 !important; }
+::-webkit-input-placeholder { color: #000 !important; opacity: 1 !important; }
+::-moz-placeholder { color: #000 !important; opacity: 1 !important; }
+
+/* Also force text inside dark-mode rules to black */
+.dark, .dark * { color: #000 !important; }

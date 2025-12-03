@@ -19,3 +19,20 @@
     }
 }
 
+/* Emergency override: force all text black in served CSS so the
+   running site immediately reflects the change without rebuilding. */
+html, body, :root, * , *::before, *::after {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+input, textarea, select, button {
+    color: #000 !important;
+}
+
+::placeholder { color: #000 !important; opacity: 1 !important; }
+::-webkit-input-placeholder { color: #000 !important; opacity: 1 !important; }
+::-moz-placeholder { color: #000 !important; opacity: 1 !important; }
+
+.dark, .dark * { color: #000 !important; }
+
